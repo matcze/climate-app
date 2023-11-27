@@ -10,7 +10,7 @@ function Tabs() {
 
 	const toggleTab = index => {
 		setToggleState(index)
-	}
+	} 
 
 	return (
 		<div className='content_container'>

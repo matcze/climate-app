@@ -97,7 +97,7 @@ function Temperature({ toggleState }) {
 		<div
 			className={
 				toggleState === 3
-					? "container content active-content"
+					? "container active-content"
 					: "container content"
 			}>
 			<div className='headline'>

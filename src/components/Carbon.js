@@ -8,17 +8,16 @@ function Carbon({ toggleState }) {
 	]
 	const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 	const years = [
-		2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
-		2022, 2023,
+		2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
 	]
 	const [choosenDay, setChoosenDay] = useState(1)
 	const [choosenMonth, setChoosenMonth] = useState(1)
-	const [choosenYear, setChoosenYear] = useState(2010)
+	const [choosenYear, setChoosenYear] = useState(2013)
 	const [carbonData, setCabronData] = useState({
 		concetration: 0,
 		day: 1,
 		month: 1,
-		year: 2010,
+		year: 2013,
 	})
 
 	function showDay(e) {
@@ -50,9 +49,9 @@ function Carbon({ toggleState }) {
 			.then(function (response) {
 				for (let i = 0; i < response.data.co2.length; i++) {
 					if (
-						response.data.co2[i].year == choosenYear &&
-						response.data.co2[i].month == choosenMonth &&
-						response.data.co2[i].day == choosenDay
+						response.data.co2[i].year === choosenYear &&
+						response.data.co2[i].month === choosenMonth &&
+						response.data.co2[i].day === choosenDay
 					) {
 						setCabronData({
 							concetration: response.data.co2[i].trend,
@@ -71,9 +70,7 @@ function Carbon({ toggleState }) {
 	return (
 		<div
 			className={
-				toggleState === 1
-					? "container content active-content"
-					: "container content"
+				toggleState === 1 ? "container active-content" : "container content"
 			}>
 			<div className='headline'>
 				<h3>

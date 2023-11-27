@@ -52,7 +52,7 @@ function Carbon({toggleState}) {
 	return (
 		<div className={
 			toggleState === 4
-				? "container content active-content"
+				? "container active-content"
 				: "container content"
 		}>
 			<div className='headline'>

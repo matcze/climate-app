@@ -1,20 +1,20 @@
 import { useState } from "react"
 import axios from "axios"
 
-function Methan({toggleState}) {
+function Methan({ toggleState }) {
 	const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 	const years = [
-		1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994,
-		1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
-		2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018,
-		2019, 2020, 2021, 2022, 2023,
+		1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995,
+		1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
+		2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+		2020, 2021, 2022, 2023,
 	]
 	const [choosenMonth, setChoosenMonth] = useState(1)
-	const [choosenYear, setChoosenYear] = useState(1983)
+	const [choosenYear, setChoosenYear] = useState(1984)
 	const [methanData, setMethanData] = useState({
 		concetration: 0,
 		month: 1,
-		year: 1983,
+		year: 1984,
 	})
 
 	function showMonth(e) {
@@ -41,7 +41,7 @@ function Methan({toggleState}) {
 			.then(function (response) {
 				for (let i = 0; i < response.data.methane.length; i++) {
 					if (
-						response.data.methane[i].date == `${choosenYear}.${choosenMonth}`
+						response.data.methane[i].date === `${choosenYear}.${choosenMonth}`
 					) {
 						setMethanData({
 							concetration: response.data.methane[i].average,
@@ -57,11 +57,12 @@ function Methan({toggleState}) {
 	}
 
 	return (
-		<div className={
-			toggleState === 2
-				? "container content active-content"
-				: "container content"
-		}>
+		<div
+			className={
+				toggleState === 2
+					? "container active-content"
+					: "container content"
+			}>
 			<div className='headline'>
 				<h3>Methan Concentration</h3>
 			</div>

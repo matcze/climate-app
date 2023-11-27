@@ -1,9 +1,11 @@
 import React from "react"
 
 export default function Copyrights() {
+	const recYear = new Date().getFullYear()
+
 	return (
 		<p className='copyrights'>
-			Copyright © 2023 by Czarny, All rights reserved!
+			Copyright © <span>{recYear}</span> by Czarny, All rights reserved!
 		</p>
 	)
 }

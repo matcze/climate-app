@@ -19,7 +19,7 @@ function NewsFeed() {
 		axios
 			.request(options)
 			.then(function (response) {
-				console.log(response.data)
+				// console.log(response.data)
 				setArticles(response.data.articles)
 			})
 			.catch(function (error) {
